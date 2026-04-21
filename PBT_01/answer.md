@@ -136,6 +136,28 @@ Việc chia rõ ba phần giúp trình duyệt, máy in, screen reader và lập
 
 ---
 
+# 📋 PHẦN B - THỰC HÀNH CODE
+
+## Bài B3 — Debug HTML (Phân tích và sửa 12 lỗi)
+
+Dưới đây là danh sách 12 lỗi đã được phát hiện và khắc phục trong file `debug.html`:
+
+1.  **Lỗi 1: Dòng 1** — Khai báo `<!DOCTYPE>` không đầy đủ — **Sửa:** `<!DOCTYPE html>`.
+2.  **Lỗi 2: Dòng 2** — Thẻ `<html>` thiếu thuộc tính `lang` (quan trọng cho Accessibility) — **Sửa:** `<html lang="vi">`.
+3.  **Lỗi 3: Dòng 4** — Thẻ `<title>` chưa có thẻ đóng — **Sửa:** Thêm `</title>`.
+4.  **Lỗi 4: Dòng 5** — Thiếu thẻ `<meta name="viewport">` khiến trang không hiển thị tốt trên di động — **Sửa:** Bổ sung meta viewport.
+5.  **Lỗi 5: Dòng 5** — Giá trị charset `utf8` viết sai định dạng chuẩn — **Sửa:** `UTF-8`.
+6.  **Lỗi 6: Dòng 8** — Thẻ `<h1>` sử dụng thẻ đóng sai — **Sửa:** `</h1>`.
+7.  **Lỗi 7: Dòng 12** — Thẻ `<a>` đầu tiên đóng sai cú pháp — **Sửa:** `</a>`.
+8.  **Lỗi 8: Dòng 21** — Thẻ `<img>` thiếu ngoặc kép cho thuộc tính và thiếu `alt` mô tả ảnh — **Sửa:** Thêm ngoặc kép và `alt`.
+9.  **Lỗi 9: Dòng 23** — Lồng thẻ sai quy tắc (thẻ `<b>` đóng sau thẻ `<p>`) — **Sửa:** Đóng `<b>` trước khi đóng `<p>`.
+10. **Lỗi 10: Dòng 30-31** — Hàng tiêu đề bảng sử dụng thẻ `<td>` thay vì `<th>` — **Sửa:** Thay bằng `<th>` để đúng ngữ nghĩa tiêu đề.
+11. **Lỗi 11: Dòng 28-37** — `<table>` thiếu cấu trúc `<thead>` và `<tbody>` — **Sửa:** Bổ sung các thẻ phân đoạn bảng.
+12. **Lỗi 12: Dòng 41** — Sử dụng hai thẻ `<main>` trên cùng một trang (sai chuẩn HTML5) — **Sửa:** Thay thẻ `<main>` thứ hai thành `<aside>`.
+13. **Lỗi 13: Dòng 46** — Thẻ `<p>` trong footer chưa được đóng — **Sửa:** Thêm `</p>`.
+
+---
+
 # 📋 PHẦN C - SUY LUẬN
 
 ## Câu C1 - Thiết kế cấu trúc HTML
@@ -146,6 +168,15 @@ Việc chia rõ ba phần giúp trình duyệt, máy in, screen reader và lập
 * `05_tables_hyperlinks.md` — Mục `Table — Bảng dữ liệu`
 
 ```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C1 — Chi tiết sản phẩm</title>
+</head>
+<body>
+
 <header>
     <!-- header: phần đầu trang -->
     <nav>
@@ -174,10 +205,38 @@ Việc chia rõ ba phần giúp trình duyệt, máy in, screen reader và lập
         <!-- article: khối nội dung độc lập về sản phẩm -->
 
         <section id="gallery">
+            <!-- section: nhóm khu vực ảnh sản phẩm lại thành 1 phân đoạn riêng -->
             <h2>Hình ảnh sản phẩm</h2>
+
+            <figure>
+                <!-- figure: ảnh chính của sản phẩm kèm chú thích -->
+                <img src="https://placehold.co/600x400" alt="iPhone 16 Pro Max - Ảnh chính">
+                <figcaption>iPhone 16 Pro Max — Ảnh chính</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://placehold.co/600x400" alt="iPhone 16 Pro Max - Góc nghiêng">
+                <figcaption>Góc nghiêng</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://placehold.co/600x400" alt="iPhone 16 Pro Max - Mặt sau">
+                <figcaption>Mặt sau</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://placehold.co/600x400" alt="iPhone 16 Pro Max - Camera">
+                <figcaption>Cụm camera</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://placehold.co/600x400" alt="iPhone 16 Pro Max - Hộp sản phẩm">
+                <figcaption>Hộp sản phẩm</figcaption>
+            </figure>
         </section>
 
         <section id="info">
+            <!-- section: nhóm thông tin sản phẩm riêng -->
             <h1>iPhone 16 Pro Max</h1>
             <p><strong>25.990.000đ</strong></p>
             <p>⭐⭐⭐⭐⭐</p>
@@ -185,8 +244,8 @@ Việc chia rõ ba phần giúp trình duyệt, máy in, screen reader và lập
         </section>
 
         <section id="specs">
+            <!-- section: khu vực thông số kỹ thuật -->
             <h2>Thông số kỹ thuật</h2>
-
             <table>
                 <thead>
                     <tr>
@@ -204,20 +263,28 @@ Việc chia rõ ba phần giúp trình duyệt, máy in, screen reader và lập
         </section>
 
         <section id="reviews">
+            <!-- section: khu vực đánh giá -->
             <h2>Đánh giá</h2>
+            <p><em>(Chưa có đánh giá)</em></p>
         </section>
 
     </article>
 
     <aside>
+        <!-- aside: nội dung phụ — sản phẩm tương tự -->
         <h2>Sản phẩm tương tự</h2>
+        <p><em>(Placeholder)</em></p>
     </aside>
 
 </main>
 
 <footer>
+    <!-- footer: phần cuối trang -->
     <p>&copy; 2026 ShopTLU</p>
 </footer>
+
+</body>
+</html>
 ```
 
 ---
