@@ -13,9 +13,9 @@
 
 ### Phiếu bài tập (PBT)
 - **PBT_01: HTML5 Fundamentals**
-  - [ ] **Phần A: KIỂM TRA ĐỌC HIỂU**  
-  - [ ] **Phần B: THỰC HÀNH CODE** 
-  - [ ] **Phần C: SUY LUẬN**  
+  - [X] **Phần A: KIỂM TRA ĐỌC HIỂU**  
+  - [X] **Phần B: THỰC HÀNH CODE** 
+  - [X] **Phần C: SUY LUẬN**  
   - [ ] **Phần D:VIDEO THỰC HÀNH OBS** 
 - **PBT_02:** (Đang cập nhật...)
 - **PBT_03:** (Đang cập nhật...)
