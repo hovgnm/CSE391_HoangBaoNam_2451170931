@@ -156,6 +156,51 @@ Dưới đây là danh sách 12 lỗi đã được phát hiện và khắc ph�
 12. **Lỗi 12: Dòng 41** — Sử dụng hai thẻ `<main>` trên cùng một trang (sai chuẩn HTML5) — **Sửa:** Thay thẻ `<main>` thứ hai thành `<aside>`.
 13. **Lỗi 13: Dòng 46** — Thẻ `<p>` trong footer chưa được đóng — **Sửa:** Thêm `</p>`.
 
+## Câu B4 - Phân tích trang web thật
+ 
+**Trang web chọn:** shopee.vn
+ 
+---
+ 
+### 1. Các thẻ semantic HTML5 tìm được (tab Elements)
+ 
+**3 thẻ semantic đang dùng:**
+ 
+- `<header class="shopee-top shopee-top--sticky">` — đầu trang, chứa logo, ô tìm kiếm và nav điều hướng, có sticky nên luôn hiển thị khi scroll
+- `<nav class="container navbar">` — nằm trong `<header>`, chứa các link danh mục sản phẩm
+- `<footer role="contentinfo" class="Dtu9HW wfGQ6T">` — cuối trang, chứa link SEO, thông tin công ty, mạng xã hội; có thêm `role="contentinfo"` cho accessibility
+![Elements tab - semantic tags](screenshots/B4_Semantic_1.png)
+![Elements tab - semantic tags](screenshots/B4_Semantic_2.png)
+![Elements tab - semantic tags](screenshots/B4_Semantic_3.png)
+ 
+**2 thẻ dùng chưa đúng semantic:**
+ 
+- Các card sản phẩm dùng `<div>` thay vì `<article>` — mỗi sản phẩm là nội dung độc lập, dùng `<article>` sẽ đúng hơn
+- Phần banner slider dùng `<div>` thay vì `<section>` hoặc `<figure>`
+---
+ 
+### 2. Tìm `<table>` trên trang
+ 
+Tìm bằng Ctrl+F trong tab Elements với từ khóa "table", kết quả có **31 table** trên trang.
+ 
+Table tìm được nằm trong **footer**, bên trong `<section class="shopee-footer-section">`, hiển thị các link SEO dạng lưới (danh sách các dòng điện thoại iPhone, Samsung,...).
+ 
+- Có dùng `<tbody>` và `<tr>`, `<td>`
+- **Không có** `<thead>` hay `<tfoot>` — cấu trúc chưa đầy đủ theo chuẩn
+![Elements tab - table](screenshots/B4_Table.png)
+ 
+---
+ 
+### 3. Tìm `<form>` trên trang
+ 
+Form tìm được là **ô tìm kiếm** trên thanh header, class `shopee-searchbar`.
+ 
+- `role="search"` — dùng ARIA role thay vì action/method thông thường
+- `autocomplete="off"` — tắt gợi ý tự động của browser
+- Không có `action` và `method` rõ ràng — Shopee xử lý submit bằng JavaScript thay vì form truyền thống
+- Bên trong có `<div class="shopee-searchbar__main">` chứa input, và `<button type="button">` là nút tìm kiếm (icon kính lúp)
+![Elements tab - form](screenshots/B4_Form.png)
+
 ---
 
 # 📋 PHẦN C - SUY LUẬN
