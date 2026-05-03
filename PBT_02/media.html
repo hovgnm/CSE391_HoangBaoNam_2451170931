@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CellphoneS — Giới thiệu sản phẩm</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+        header { display: flex; align-items: center; gap: 12px; background: #fff; padding: 16px 24px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        header span { font-size: 1.2rem; font-weight: bold; }
+        h2 { margin-bottom: 16px; }
+        .product-gallery { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+        .product { background: #fff; border-radius: 8px; padding: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); width: 260px; }
+        .product img { max-width: 100%; height: auto; border-radius: 4px; }
+        figcaption { margin-top: 8px; font-size: 0.9rem; color: #555; }
+        .media-section { background: #fff; padding: 20px 24px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .media-section h2 { margin-top: 0; }
+        video, audio { width: 100%; margin-top: 8px; }
+        footer { text-align: center; padding: 16px; color: #888; font-size: 0.85rem; }
+        footer a { color: #1a73e8; margin: 0 8px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<!-- Header với SVG logo inline -->
+<header>
+    <svg width="44" height="44" viewBox="0 0 44 44"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-label="Logo CellphoneS" role="img">
+        <rect width="44" height="44" rx="8" fill="#E53935"/>
+        <text x="50%" y="52%" text-anchor="middle"
+              fill="#fff" font-size="11" font-family="Arial" font-weight="bold"
+              dominant-baseline="middle">CPS</text>
+    </svg>
+    <span>CellphoneS — Giới thiệu sản phẩm</span>
+</header>
+
+<!-- Gallery 3 sản phẩm -->
+<section class="media-section">
+    <h2>Sản phẩm nổi bật</h2>
+    <div class="product-gallery">
+
+        <article class="product">
+            <figure>
+                <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/i/p/iphone-16-pro-max_1.png?_gl=1*kuoapd*_gcl_aw*R0NMLjE3Nzc3NDU5NzEuQ2p3S0NBand3ZGJQQmhCZ0Vpd0F4QlJBNGMwNkpON3F5U2NDZUM1cXNESGU1LTQ5N01ycHpVeFlJRENLQWRLVW84aDdldWpfUmJiN21Sb0NucVlRQXZEX0J3RQ..*_gcl_au*MTQ2MDAyMjc1Ny4xNzc3NzQ1OTYz*_ga*MTA1MjM4MjU5NC4xNzc3NzQ1OTYz*_ga_QLK8WFHNK9*czE3Nzc3NDU5NjMkbzEkZzEkdDE3Nzc3NDU5ODEkajQyJGwwJGgxMzg2MTM3MDg4"
+                     alt="iPhone 17 Pro Max 512GB"
+                     width="260"
+                     height="260"
+                     loading="lazy">
+                <figcaption>iPhone 17 Pro Max — 29.990.000đ</figcaption>
+            </figure>
+        </article>
+
+        <article class="product">
+            <figure>
+                <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/aa18250/media-gallery/laptop-alienware-aa18250nt-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=486&qlt=100,1&resMode=sharp2&size=486,402&chrss=full"
+                     alt="LLaptop gaming Alienware 18 Area-51"
+                     width="260"
+                     height="260"
+                     loading="lazy">
+                <figcaption>Alienware 18 Area-51 — 45.000.000đ</figcaption>
+            </figure>
+        </article>
+
+        <article class="product">
+            <figure>
+                <img src="https://cdn.shopify.com/s/files/1/0298/6259/2571/products/6145c1d32e6ac8e63a46c912dc33c5bb.png?v=1766480286"
+                     alt="Tai nghe Sony WH-1000XM5 màu đen, chống ồn chủ động"
+                     width="260"
+                     height="260"
+                     loading="lazy">
+                <figcaption>Sony WH-1000XM5 — 8.490.000đ</figcaption>
+            </figure>
+        </article>
+
+    </div>
+</section>
+
+<!-- Video YouTube embed -->
+<section class="media-section">
+    <h2>Video giới thiệu CellphoneS</h2>
+    <iframe width="100%"
+            height="400"
+            src="https://www.youtube-nocookie.com/embed/NNerzOwb8ew"
+            title="Chào mừng bạn đến với CellphoneS"
+            frameborder="0"
+            loading="lazy"
+            allowfullscreen>
+    </iframe>
+</section>
+
+<!-- Video self-hosted -->
+<section class="media-section">
+    <h2>Video thương hiệu CellphoneS</h2>
+    <video controls
+           width="100%"
+           poster="https://img.youtube.com/vi/NNerzOwb8ew/maxresdefault.jpg"
+           preload="metadata">
+        <source src="https://www.w3schools.com/html/mov_bbb.webm" type="video/webm">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <p>Browser không hỗ trợ HTML5 video.
+           <a href="https://www.w3schools.com/html/mov_bbb.mp4">Tải video trực tiếp</a>
+        </p>
+    </video>
+</section>
+
+<!-- Audio -->
+<section class="media-section">
+    <h2>Nhạc nền CellphoneS</h2>
+    <audio controls preload="none">
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        <p>Browser không hỗ trợ HTML5 audio.</p>
+    </audio>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>Theo dõi chúng tôi:</p>
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
+</footer>
+
+</body>
+</html>
