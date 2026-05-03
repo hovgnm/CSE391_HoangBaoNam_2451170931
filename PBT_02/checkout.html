@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+
+</head>
+<body>
+
+<h1>Xác nhận đặt hàng</h1>
+
+<!-- Phần 1: Giỏ hàng -->
+<section>
+    <h2>🛒 Giỏ hàng</h2>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>iPhone 16 Pro Max 256GB</td>
+                <td>29.990.000đ</td>
+                <td>1</td>
+                <td>29.990.000đ</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ốp lưng iPhone 16 Pro Max</td>
+                <td>250.000đ</td>
+                <td>2</td>
+                <td>500.000đ</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Cáp sạc USB-C 1m</td>
+                <td>190.000đ</td>
+                <td>1</td>
+                <td>190.000đ</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Tổng cộng</td>
+                <td>30.680.000đ</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+<!-- Phần 2: Form thanh toán -->
+<section>
+    <h2>💳 Thanh toán</h2>
+    <form action="#" method="POST">
+
+        <!-- Phương thức thanh toán -->
+        <fieldset>
+            <legend>Phương thức thanh toán</legend>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="payment" value="cod" required>
+                    Thanh toán khi nhận hàng (COD)
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="bank">
+                    Chuyển khoản ngân hàng
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="ewallet">
+                    Ví điện tử (MoMo / ZaloPay)
+                </label>
+            </div>
+        </fieldset>
+
+        <br>
+
+        <!-- Mã giảm giá -->
+        <div class="field">
+            <label for="coupon">Mã giảm giá:</label>
+            <input type="text"
+                   id="coupon"
+                   name="coupon"
+                   pattern="SALE[0-9]{4}"
+                   title='Mã giảm giá đúng định dạng: SALE + 4 chữ số, ví dụ SALE2026'
+                   placeholder="SALE2026"
+                   list="coupon-suggestions">
+            <!-- Bonus: datalist -->
+            <datalist id="coupon-suggestions">
+                <option value="SALE2026">
+                <option value="SALE1000">
+                <option value="SALE5000">
+            </datalist>
+            <p class="hint">Định dạng: SALE + 4 chữ số (VD: SALE2026)</p>
+        </div>
+
+        <!-- Tổng tiền hiển thị bằng output (bonus) -->
+        <div class="field">
+            <label for="total">Tổng tiền thanh toán:</label>
+            <output id="total" name="total">30.680.000đ</output>
+        </div>
+
+        <!-- Điểm tích lũy -->
+        <p>
+            <label>Điểm tích lũy của bạn:</label><br>
+            <meter min="0" max="10000" value="6500">6500 / 10000 điểm</meter><br>
+            <small>6.500 / 10.000 điểm — còn 3.500 điểm để đạt hạng Vàng</small>
+        </p>
+
+        <!-- Ghi chú -->
+        <div class="field">
+            <label for="note">Ghi chú đơn hàng:</label>
+            <textarea id="note"
+                      name="note"
+                      rows="3"
+                      placeholder="Ví dụ: Giao giờ hành chính, gọi trước khi giao..."></textarea>
+        </div>
+
+        <!-- Phần 3: Thông tin giao hàng -->
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+
+            <p>
+                <label for="delivery-date">Ngày giao hàng mong muốn: <span aria-hidden="true">*</span></label><br>
+                <input type="date"
+                       id="delivery-date"
+                       name="delivery_date"
+                       required
+                       min="2026-05-04">
+                <small>Chọn từ ngày mai trở đi</small>
+            </p>
+
+            <p>
+                <label for="time-slot">Khung giờ giao hàng: <span aria-hidden="true">*</span></label><br>
+                <select id="time-slot" name="time_slot" required>
+                    <option value="">-- Chọn khung giờ --</option>
+                    <option value="morning">Sáng 8h – 12h</option>
+                    <option value="afternoon">Chiều 14h – 18h</option>
+                    <option value="evening">Tối 18h – 21h</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="delivery-days">Thời gian giao hàng dự kiến (1–7 ngày): <span aria-hidden="true">*</span></label><br>
+                <input type="number"
+                       id="delivery-days"
+                       name="delivery_days"
+                       min="1"
+                       max="7"
+                       step="1"
+                       value="3"
+                       required>
+                <small>Nhập số ngày từ 1 đến 7</small>
+            </p>
+
+        </fieldset>
+
+        <button type="submit" aria-label="Xác nhận đặt hàng">
+            Xác nhận đặt hàng
+        </button>
+
+    </form>
+</section>
+
+</body>
+</html>
