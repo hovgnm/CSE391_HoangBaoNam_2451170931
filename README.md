@@ -18,12 +18,20 @@
   - [X] **Phần C: SUY LUẬN**  
   - [ ] **Phần D: VIDEO THỰC HÀNH OBS** 
 - **PBT_02: HTML5 FORMS & MEDIA**
+  - [X] **Phần A: KIỂM TRA ĐỌC HIỂU**  
+  - [X] **Phần B: THỰC HÀNH CODE** 
+  - [X] **Phần C: SUY LUẬN**  
+  - [ ] **Phần D: VIDEO THỰC HÀNH OBS** 
+- **PBT_03:** (Đang cập nhật...)
   - [ ] **Phần A: KIỂM TRA ĐỌC HIỂU**  
   - [ ] **Phần B: THỰC HÀNH CODE** 
   - [ ] **Phần C: SUY LUẬN**  
-  - [ ] **Phần D: VIDEO THỰC HÀNH OBS** 
-- **PBT_03:** (Đang cập nhật...)
+  - [ ] **Phần D:VIDEO THỰC HÀNH OBS** 
 - **PBT_04:** (Đang cập nhật...)
+  - [ ] **Phần A: KIỂM TRA ĐỌC HIỂU**  
+  - [ ] **Phần B: THỰC HÀNH CODE** 
+  - [ ] **Phần C: SUY LUẬN**  
+  - [ ] **Phần D:VIDEO THỰC HÀNH OBS** 
 - **PBT_05:** (Đang cập nhật...)
 - **PBT_06:** (Đang cập nhật...)
 - **PBT_07:** (Đang cập nhật...)
