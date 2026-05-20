@@ -200,3 +200,105 @@ Element sẽ có **màu cam (orange)** vì inline style có độ ưu tiên cao 
 Element sẽ có **màu đen (black)** vì `!important` ghi đè tất cả mọi thứ kể cả ID selector và inline style (trừ khi inline style cũng có `!important`). Dù Rule A có specificity thấp nhất (0,0,1) nhưng `!important` đưa nó lên ưu tiên tối cao.
 
 ---
+
+---
+
+# PHẦN B - THỰC HÀNH CODE
+
+## Bài B1 - Style trang Profile
+
+**Nguồn tham chiếu:**
+
+- `09_css_selectors.md` — mục 3. Core Technical Truth > 5 loại Selector cơ bản
+- `09_css_selectors.md` — mục 3. Core Technical Truth > Pseudo-classes
+
+### Danh sách 5 loại selector đã dùng trong file `style.css`
+
+| Loại selector         | Ví dụ trong file                            | Dùng để làm gì                                     |
+| --------------------- | ------------------------------------------- | -------------------------------------------------- |
+| Element selector      | `body`, `table`, `footer`                   | Set style mặc định cho toàn trang                  |
+| Class selector        | `.active`                                   | Style link đang được chọn trong nav                |
+| ID selector           | `#about`, `#skills`, `#contact`             | Style từng section riêng biệt                      |
+| Descendant selector   | `nav a`, `thead tr`, `tbody tr`             | Chọn link bên trong nav, row bên trong thead/tbody |
+| Pseudo-class selector | `a:hover`, `tr:nth-child(even)`, `tr:hover` | Style khi hover, zebra striping cho bảng           |
+
+![Kết quả profile page](screenshots/b1-profile.png)
+
+---
+
+## Bài B2 - Box Model Lab
+
+**Nguồn tham chiếu:**
+
+- `11_box_model.md` — mục 3. Core Technical Truth > `content-box` (mặc định)
+- `11_box_model.md` — mục 3. Core Technical Truth > `border-box`
+
+### Phần 1 — content-box vs border-box
+
+Cả 2 hộp đều đặt `width: 300px`, `padding: 20px`, `border: 5px solid`.
+
+```
+Hộp 1 (content-box): chiều rộng thực tế = 350px (đo từ DevTools)
+Hộp 2 (border-box):  chiều rộng thực tế = 300px (đo từ DevTools)
+```
+
+**Giải thích sự khác biệt:**
+
+Hộp 1 dùng `content-box` (mặc định) nên `width: 300px` chỉ tính phần content, padding và border bị cộng thêm ra ngoài: 300 + (20×2) + (5×2) = 350px. Hộp 2 dùng `border-box` nên `width: 300px` đã bao gồm luôn padding và border, chúng co vào trong, tổng vẫn đúng 300px.
+
+![DevTools box model hộp 1 - content-box](screenshots/b2-devtools-contentbox.png)
+![DevTools box model hộp 2 - border-box](screenshots/b2-devtools-borderbox.png)
+
+---
+
+### Phần 2 — Layout 3 cột
+
+3 cột trong container 1000px: cột trái 250px, cột giữa 500px, cột phải 250px. Tổng = 250 + 500 + 250 = 1000px đúng khít.
+
+Dùng `box-sizing: border-box` cho toàn trang (dòng `* { box-sizing: border-box }`) nên padding của mỗi cột co vào trong, không làm tổng vượt quá 1000px.
+
+Nếu không dùng `border-box`: cột trái thực tế = 250 + 30 = 280px, cột giữa = 500 + 40 = 540px, cột phải = 250 + 30 = 280px → tổng = 1100px → vỡ layout.
+
+![Layout 3 cột đúng với border-box](screenshots/b2-layout-fixed.png)
+
+---
+
+## Bài B3 - Specificity Battle
+
+**Nguồn tham chiếu:**
+
+- `09_css_selectors.md` — mục 3. Core Technical Truth > Specificity
+- `10_inheritance_cascading.md` — mục 3. Core Technical Truth > Cascade
+
+### 1. Danh sách 10 rules + specificity score
+
+Element target: `<p id="demo" class="text highlight">Hello World</p>`
+
+| STT | Rule               | Specificity (a,b,c) | Color đặt |
+| --- | ------------------ | ------------------- | --------- |
+| 1   | `p`                | (0,0,1)             | lightgray |
+| 2   | `body p`           | (0,0,2)             | gray      |
+| 3   | `.text`            | (0,1,0)             | blue      |
+| 4   | `.highlight`       | (0,1,0)             | orange    |
+| 5   | `p.text`           | (0,1,1)             | green     |
+| 6   | `p.highlight`      | (0,1,1)             | purple    |
+| 7   | `.text.highlight`  | (0,2,0)             | brown     |
+| 8   | `p.text.highlight` | (0,2,1)             | deeppink  |
+| 9   | `#demo`            | (1,0,0)             | red       |
+| 10  | `#demo.text`       | (1,1,0)             | darkgreen |
+
+### 2. Element hiển thị màu gì? Tại sao?
+
+Element hiển thị màu **darkgreen** vì rule `#demo.text` có specificity cao nhất là (1,1,0) — gồm 1 ID selector và 1 class selector. Không có rule nào có specificity cao hơn nên nó thắng.
+
+![Kết quả specificity battle](screenshots/b3-specificity-result.png)
+
+### 3. Thay đổi thứ tự rules trong CSS file, kết quả có đổi không?
+
+**Phần lớn là không đổi** — vì specificity khác nhau thì thứ tự không quan trọng, rule có specificity cao hơn luôn thắng dù viết trước hay sau.
+
+**Trường hợp ngoại lệ:** Nếu đổi thứ tự của 2 rule có **cùng specificity** thì kết quả sẽ đổi. Ví dụ rule 3 `.text` và rule 4 `.highlight` đều có specificity (0,1,0) — nếu đổi thứ tự 2 rule này thì `.text` sẽ thắng thay vì `.highlight` vì rule viết sau mới thắng khi bằng điểm.
+
+![DevTools styles panel - các rule bị gạch ngang](screenshots/b3-devtools-styles.png)
+
+---
