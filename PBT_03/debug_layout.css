@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 16px;
+  margin: 12px 0 6px 0;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid #94a3b8;
+  margin-bottom: 10px;
+}
+
+/* ===== Layout gốc bị vỡ ===== */
+.sidebar-broken {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #fde8e8;
+}
+.content-broken {
+  width: 660px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #fde8e8;
+}
+/* tổng thực tế = 342 + 722 = 1064px > 960px → vỡ */
+
+/* ===== Cách sửa 1: border-box ===== */
+.sidebar-fix1 {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #dcfce7;
+}
+.content-fix1 {
+  box-sizing: border-box;
+  width: 660px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #dcfce7;
+}
+/* tổng = 300 + 660 = 960px ✅ */
+
+/* ===== Cách sửa 2: tính tay ===== */
+.sidebar-fix2 {
+  width: 258px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #dbeafe;
+}
+.content-fix2 {
+  width: 598px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #dbeafe;
+}
+/* tổng = 258+40+2 + 598+60+2 = 960px ✅ */

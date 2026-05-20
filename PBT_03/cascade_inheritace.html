@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cascade Test - Câu C2</title>
+    <link rel="stylesheet" href="cascade_inheritace.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" id="featured">
+        <h2 class="title highlight">Sản phẩm A</h2>
+        <p>Mô tả sản phẩm</p>
+      </div>
+
+      <div class="card">
+        <h2 class="title">Sản phẩm B</h2>
+        <p class="highlight">Mô tả sản phẩm B</p>
+      </div>
+    </div>
+
+    <!-- ghi chú kết quả dự đoán -->
+    <hr />
+    <h3>Kết quả dự đoán:</h3>
+    <ul>
+      <li>"Sản phẩm A" → font-size: 20px, color: green (!important thắng)</li>
+      <li>"Mô tả sản phẩm" → color: blue (inherit từ .card)</li>
+      <li>"Sản phẩm B" → font-size: 20px, color: blue (inherit từ .card)</li>
+      <li>"Mô tả sản phẩm B" → color: green (!important thắng)</li>
+    </ul>
+  </body>
+</html>

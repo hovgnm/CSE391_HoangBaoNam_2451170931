@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Debug Layout - Câu C1</title>
+    <link rel="stylesheet" href="debug_layout.css" />
+  </head>
+  <body>
+    <h1>Câu C1 - Debug Layout</h1>
+
+    <!-- Layout bị vỡ (code gốc) -->
+    <h2>Layout gốc - BỊ VỠ (sidebar + content > 960px)</h2>
+    <div class="container broken">
+      <div class="sidebar-broken">Sidebar (300px → thực tế 342px)</div>
+      <div class="content-broken">Content (660px → thực tế 722px)</div>
+    </div>
+
+    <hr />
+
+    <!-- Cách sửa 1: border-box -->
+    <h2>Cách sửa 1 - Dùng border-box</h2>
+    <div class="container">
+      <div class="sidebar-fix1">Sidebar (300px, border-box)</div>
+      <div class="content-fix1">Content (660px, border-box)</div>
+    </div>
+
+    <hr />
+
+    <!-- Cách sửa 2: tính tay width -->
+    <h2>Cách sửa 2 - Tính tay width</h2>
+    <div class="container">
+      <div class="sidebar-fix2">Sidebar (258px, không border-box)</div>
+      <div class="content-fix2">Content (598px, không border-box)</div>
+    </div>
+  </body>
+</html>

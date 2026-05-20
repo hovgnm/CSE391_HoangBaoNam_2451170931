@@ -302,3 +302,193 @@ Element hiển thị màu **darkgreen** vì rule `#demo.text` có specificity ca
 ![DevTools styles panel - các rule bị gạch ngang](screenshots/b3-devtools-styles.png)
 
 ---
+
+# PHẦN C - DEBUG & SUY LUẬN
+
+## Câu C1 - Debug CSS Layout
+
+**Nguồn tham chiếu:**
+
+- `11_box_model.md` — mục 3. Core Technical Truth > `content-box` (mặc định)
+- `11_box_model.md` — mục 3. Core Technical Truth > `border-box`
+
+### 1. Tính chiều rộng thực tế của sidebar và content
+
+Cả 2 đều dùng `content-box` mặc định, nên padding và border cộng thêm ra ngoài `width`:
+
+**Sidebar:**
+
+- width: 300px + padding: 20px×2 + border: 1px×2
+- = 300 + 40 + 2 = **342px**
+
+**Content:**
+
+- width: 660px + padding: 30px×2 + border: 1px×2
+- = 660 + 60 + 2 = **722px**
+
+### 2. Tại sao layout bị vỡ?
+
+Tổng chiều rộng thực tế = 342 + 722 = **1064px** nhưng container chỉ có **960px**. Tổng vượt quá 104px nên `.content` bị đẩy xuống dòng mới, không còn chỗ để float bên cạnh `.sidebar` nữa.
+
+### 3. Hai cách sửa
+
+**Cách 1: Dùng `box-sizing: border-box`**
+
+Thêm `box-sizing: border-box` cho cả 2 element, giữ nguyên `width` 300px và 660px. Khi đó padding và border sẽ co vào trong, tổng 300 + 660 = 960px vừa khít container.
+
+```css
+.sidebar {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+}
+.content {
+  box-sizing: border-box;
+  width: 660px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+}
+```
+
+**Cách 2: Không dùng border-box, giảm width để bù phần padding + border**
+
+Tính lại width bằng cách trừ đi phần padding và border:
+
+- Sidebar thực cần 300px → width phải đặt = 300 - 40 - 2 = **258px**
+- Content thực cần 660px → width phải đặt = 660 - 60 - 2 = **598px**
+- Tổng kiểm tra: 258 + 40 + 2 + 598 + 60 + 2 = 960px ✅
+
+```css
+.sidebar {
+  width: 258px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+}
+.content {
+  width: 598px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+}
+```
+
+### 4. File kiểm chứng
+
+Tạo file `debug_layout.html` + `debug_layout.css` với 2 section riêng để chứng minh cả 2 cách sửa đều hoạt động.
+
+![Kết quả debug layout — cách 1 border-box](screenshots/c1-fix1-borderbox.png)
+![Kết quả debug layout — cách 2 tính tay](screenshots/c1-fix2-manual.png)
+
+---
+
+## Câu C2 - Cascade Puzzle
+
+**Nguồn tham chiếu:**
+
+- `10_inheritance_cascading.md` — mục 3. Core Technical Truth > Cascade
+- `10_inheritance_cascading.md` — mục 3. Core Technical Truth > Inheritance
+
+### Phân tích HTML và CSS
+
+Trước khi trả lời, liệt kê các rule liên quan:
+
+```css
+body {
+  font-size: 16px;
+  color: #333;
+}
+.container {
+  font-size: 14px;
+}
+.card {
+  color: blue;
+}
+.card .title {
+  font-size: 20px;
+}
+.card p {
+  color: inherit;
+}
+#featured .title {
+  color: red;
+}
+.highlight {
+  color: green !important;
+}
+```
+
+---
+
+### 1. "Sản phẩm A" (h2.title.highlight trong #featured.card) có font-size = ? và color = ?
+
+**font-size = 20px**
+
+Rule `.card .title { font-size: 20px }` áp dụng trực tiếp → 20px. (Không kế thừa từ `.container: 14px` vì có rule trực tiếp hơn)
+
+**color = green**
+
+Có 2 rule nhắm vào element này:
+
+- `#featured .title { color: red }` — specificity (1,1,0)
+- `.highlight { color: green !important }` — có `!important`
+
+Dù `#featured .title` có specificity cao hơn, nhưng `.highlight` có `!important` nên thắng tất cả. **Màu = green**
+
+---
+
+### 2. "Mô tả sản phẩm" (p trong #featured.card) có color = ?
+
+Rule `.card p { color: inherit }` áp dụng → `inherit` tức là kế thừa màu từ element cha.
+
+Cha trực tiếp là `.card#featured` có `color: blue` (từ rule `.card { color: blue }`). Không có rule nào override màu của `.card` này.
+
+→ `inherit` → kế thừa `blue` từ `.card`
+
+**color = blue**
+
+---
+
+### 3. "Sản phẩm B" (h2.title trong .card thứ 2, không có id featured) có font-size = ? và color = ?
+
+**font-size = 20px**
+
+Rule `.card .title { font-size: 20px }` vẫn áp dụng → 20px
+
+**color = blue**
+
+Các rule nhắm vào element này:
+
+- `#featured .title { color: red }` — KHÔNG áp dụng vì h2 này không trong `#featured`
+- `.highlight` — KHÔNG áp dụng vì h2 này không có class highlight
+- `.card .title { font-size: 20px }` — chỉ set font-size, không set color
+- Vậy color được kế thừa từ `.card` → `.card { color: blue }` → **blue**
+
+---
+
+### 4. "Mô tả sản phẩm B" (p.highlight trong .card thứ 2) có color = ?
+
+Có 2 rule áp dụng:
+
+- `.card p { color: inherit }` — specificity (0,1,1)
+- `.highlight { color: green !important }` — có `!important`
+
+`.highlight` với `!important` thắng mọi thứ.
+
+**color = green**
+
+---
+
+### Tổng kết bảng kết quả
+
+| Element                              | font-size                    | color | Lý do                                            |
+| ------------------------------------ | ---------------------------- | ----- | ------------------------------------------------ |
+| "Sản phẩm A" (h2 trong #featured)    | 20px                         | green | `.highlight !important` thắng `#featured .title` |
+| "Mô tả sản phẩm" (p trong #featured) | 14px (inherit từ .container) | blue  | `inherit` → lấy màu của .card                    |
+| "Sản phẩm B" (h2 trong .card thứ 2)  | 20px                         | blue  | inherit từ .card, không có rule màu trực tiếp    |
+| "Mô tả sản phẩm B" (p.highlight)     | 14px (inherit từ .container) | green | `.highlight !important` thắng tất cả             |
+
+![Kết quả kiểm chứng cascade puzzle](screenshots/c2-cascade-result.png)
