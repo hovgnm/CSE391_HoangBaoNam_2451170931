@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Box Model Lab</title>
+    <link rel="stylesheet" href="boxmodel.css" />
+  </head>
+  <body>
+    <h1>Bài B2 - Box Model Lab</h1>
+
+    <!-- Phần 1: content-box vs border-box -->
+    <h2>Phần 1: content-box vs border-box</h2>
+    <p>Cả 2 hộp đều có width: 300px, padding: 20px, border: 5px solid</p>
+
+    <div class="wrap-2hop">
+      <div class="hop-1">
+        <p>Hộp 1 - content-box</p>
+        <p>width thực tế = 300 + 40 + 10 = 350px</p>
+      </div>
+      <div class="hop-2">
+        <p>Hộp 2 - border-box</p>
+        <p>width thực tế = 300px (đúng như đặt)</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Phần 2: Layout 3 cột -->
+    <h2>Phần 2: Layout 3 cột (tổng 1000px)</h2>
+
+    <div class="container">
+      <div class="sidebar-trai">
+        <p>Cột trái (sidebar)</p>
+        <p>250px</p>
+      </div>
+      <div class="noi-dung">
+        <p>Cột giữa (content)</p>
+        <p>500px</p>
+      </div>
+      <div class="sidebar-phai">
+        <p>Cột phải (ads)</p>
+        <p>250px</p>
+      </div>
+    </div>
+  </body>
+</html>
