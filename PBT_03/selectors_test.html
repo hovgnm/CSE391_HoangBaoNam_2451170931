@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selectors Test - Câu A2</title>
+    <style>
+      /* 1. h1 */
+      h1 {
+        color: red;
+      }
+
+      /* 2. .price */
+      .price {
+        color: orange;
+      }
+
+      /* 3. #app header */
+      #app header {
+        background-color: lightyellow;
+      }
+
+      /* 4. nav a:first-child */
+      nav a:first-child {
+        font-weight: bold;
+      }
+
+      /* 5. .product.featured h2 */
+      .product.featured h2 {
+        color: blue;
+      }
+
+      /* 6. article > p */
+      article > p {
+        border-left: 3px solid green;
+      }
+
+      /* 7. a[href="/"] */
+      a[href="/"] {
+        text-decoration: underline;
+        color: purple;
+      }
+
+      /* 8. .top-bar.dark h1 */
+      .top-bar.dark h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header class="top-bar dark">
+        <h1>ShopTLU</h1>
+        <nav>
+          <a href="/" class="active">Home</a>
+          <a href="/products">Products</a>
+          <a href="/about">About</a>
+        </nav>
+      </header>
+      <main>
+        <article class="product">
+          <h2>iPhone 16</h2>
+          <p class="price">25.990.000đ</p>
+          <p>Mô tả sản phẩm...</p>
+        </article>
+        <article class="product featured">
+          <h2>MacBook Pro</h2>
+          <p class="price">45.990.000đ</p>
+          <p>Mô tả sản phẩm...</p>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
