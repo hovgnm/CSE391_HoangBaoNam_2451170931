@@ -1,0 +1,223 @@
+/* =============================================
+   style.css — Profile Page Stylesheet
+   Bài B1 — PBT03
+   ============================================= */
+
+/* 1. Box-sizing reset — dòng đầu tiên bắt buộc */
+* {
+    box-sizing: border-box;
+}
+
+/* =============================================
+   2. Body — Typography & Base
+   (Selector: element)
+   ============================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+/* =============================================
+   3. Header — Gradient background
+   (Selector: element)
+   ============================================= */
+header {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 60%, #3182ce 100%);
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 12px 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* =============================================
+   4. Navigation Links
+   (Selector: descendant, pseudo-class)
+   ============================================= */
+nav a {
+    color: #bee3f8;
+    text-decoration: none;       /* Mặc định: không gạch chân */
+    margin: 0 10px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: white;
+    text-decoration: underline;  /* Hover: đổi màu + gạch chân */
+    background-color: rgba(255,255,255,0.15);
+}
+
+nav a.active {
+    color: white;
+    background-color: rgba(255,255,255,0.25);
+    font-weight: 700;
+    border-bottom: 2px solid #90cdf4;
+}
+
+/* =============================================
+   5. Main content area
+   ============================================= */
+main {
+    max-width: 860px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+/* =============================================
+   6. Sections
+   (Selector: id, element)
+   ============================================= */
+#ve-toi,
+#ky-nang {
+    background: white;
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+section h2 {
+    color: #1a365d;
+    border-bottom: 3px solid #3182ce;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+/* Article inside ve-toi section */
+#ve-toi article {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+#ve-toi article p {
+    flex: 1;
+    min-width: 200px;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    border-radius: 50%;
+    border: 4px solid #3182ce;
+    display: block;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 6px;
+}
+
+/* =============================================
+   7. Table Styling — Skills Table
+   (Selector: element, class, pseudo-class)
+   ============================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;   /* Gộp border */
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+/* Header row — background đậm, text trắng */
+thead tr {
+    background-color: #1a365d;
+    color: white;
+}
+
+thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+tbody td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Zebra striping — dùng nth-child(even) */
+tbody tr:nth-child(even) {
+    background-color: #ebf4ff;
+}
+
+/* Hover row — đổi background */
+tbody tr:hover {
+    background-color: #bee3f8;
+    cursor: default;
+    transition: background-color 0.15s ease;
+}
+
+tfoot td {
+    padding: 10px 16px;
+    background-color: #e2e8f0;
+    font-style: italic;
+    color: #4a5568;
+    font-size: 0.88rem;
+}
+
+/* =============================================
+   8. Aside — Liên hệ
+   ============================================= */
+aside {
+    background: white;
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-left: 5px solid #3182ce;
+}
+
+aside h2 {
+    color: #1a365d;
+    margin-top: 0;
+}
+
+aside p {
+    margin: 8px 0;
+}
+
+aside a {
+    color: #2b6cb0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+aside a:hover {
+    color: #1a365d;
+    text-decoration: underline;
+}
+
+/* =============================================
+   9. Footer
+   (Selector: element)
+   ============================================= */
+footer {
+    background-color: #1a365d;
+    color: #a0aec0;
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 0.88rem;
+}
+
+footer p {
+    margin: 0;
+}
