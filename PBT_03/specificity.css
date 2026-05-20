@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* ===== 10 rules nhắm vào <p id="demo" class="text highlight"> ===== */
+/* Sắp xếp từ specificity THẤP đến CAO */
+
+/* Rule 1 — specificity: 0,0,1 */
+p {
+  color: lightgray;
+}
+
+/* Rule 2 — specificity: 0,0,2 */
+body p {
+  color: gray;
+}
+
+/* Rule 3 — specificity: 0,1,0 */
+.text {
+  color: blue;
+}
+
+/* Rule 4 — specificity: 0,1,0 (viết sau rule 3 nên thắng rule 3) */
+.highlight {
+  color: orange;
+}
+
+/* Rule 5 — specificity: 0,1,1 */
+p.text {
+  color: green;
+}
+
+/* Rule 6 — specificity: 0,1,1 (viết sau rule 5 nên thắng rule 5) */
+p.highlight {
+  color: purple;
+}
+
+/* Rule 7 — specificity: 0,2,0 */
+.text.highlight {
+  color: brown;
+}
+
+/* Rule 8 — specificity: 0,2,1 */
+p.text.highlight {
+  color: deeppink;
+}
+
+/* Rule 9 — specificity: 1,0,0 */
+#demo {
+  color: red;
+}
+
+/* Rule 10 — specificity: 1,1,0 — rule này THẮNG */
+#demo.text {
+  color: darkgreen;
+}
+
+/* style thêm cho element demo cho dễ nhìn */
+#demo {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-top: 10px;
+}

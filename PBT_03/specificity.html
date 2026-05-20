@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Specificity Battle</title>
+    <link rel="stylesheet" href="specificity.css" />
+  </head>
+  <body>
+    <h1>Bài B3 - Specificity Battle</h1>
+    <p>10 rules cùng nhắm vào 1 element bên dưới, sắp xếp từ thấp đến cao:</p>
+
+    <div id="wrap" class="ngoai">
+      <p id="demo" class="text highlight">Hello World</p>
+    </div>
+
+    <hr />
+    <h2>Danh sách 10 rules (thấp → cao)</h2>
+    <ol>
+      <li><code>p</code> — specificity: 0,0,1 — color: lightgray</li>
+      <li><code>body p</code> — specificity: 0,0,2 — color: gray</li>
+      <li><code>.text</code> — specificity: 0,1,0 — color: blue</li>
+      <li>
+        <code>.highlight</code> — specificity: 0,1,0 — color: orange (viết sau
+        .text nên thắng)
+      </li>
+      <li><code>p.text</code> — specificity: 0,1,1 — color: green</li>
+      <li>
+        <code>p.highlight</code> — specificity: 0,1,1 — color: purple (viết sau
+        p.text nên thắng)
+      </li>
+      <li><code>.text.highlight</code> — specificity: 0,2,0 — color: brown</li>
+      <li>
+        <code>p.text.highlight</code> — specificity: 0,2,1 — color: deeppink
+      </li>
+      <li><code>#demo</code> — specificity: 1,0,0 — color: red</li>
+      <li><code>#demo.text</code> — specificity: 1,1,0 — color: darkgreen</li>
+    </ol>
+
+    <p>
+      <strong>Kết quả:</strong> Element hiển thị màu
+      <strong>darkgreen</strong> vì rule <code>#demo.text</code> có specificity
+      cao nhất (1,1,0)
+    </p>
+  </body>
+</html>
