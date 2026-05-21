@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 0 32px;
+  height: 64px;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-menu a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-menu a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-login {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: white;
+  color: #1e293b;
+}
+
+.btn-register {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background: #1d4ed8;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+/* ===== CARD LIST - dùng flexbox wrap ===== */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+/* Mỗi card = 4 cột, dùng calc trừ đi gap */
+.card {
+  flex: 0 0 calc(25% - 15px);
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+
+  /* Card bên trong cũng dùng flex column */
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-body {
+  padding: 12px;
+  flex: 1; /* đẩy nút mua xuống dưới */
+}
+
+.card-body h4 {
+  font-size: 14px;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.price {
+  color: #e11d48;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.btn-buy {
+  margin: 0 12px 12px;
+  padding: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: auto; /* nút luôn dính đáy card */
+}
+
+.btn-buy:hover {
+  background: #1d4ed8;
+}
