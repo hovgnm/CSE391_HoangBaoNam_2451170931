@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Keyboard App</title>
+    <link rel="stylesheet" href="keyboard_app.css" />
+  </head>
+  <body>
+    <h2>
+      🖼️ Gallery ảnh (← → chuyển | Space play/pause | 1-9 nhảy | Esc đóng)
+    </h2>
+
+    <!-- Gallery -->
+    <div id="gallery">
+      <div class="thumb-list" id="thumbList"></div>
+      <p id="slideInfo">Ảnh 1 / 9</p>
+      <p
+        style="font-size: 13px; color: #888; margin-top: 4px"
+        id="slideshowStatus"
+      >
+        Slideshow: OFF
+      </p>
+    </div>
+
+    <!-- Modal ảnh to -->
+    <div
+      id="imgModal"
+      class="modal hidden"
+      role="dialog"
+      aria-label="Xem ảnh lớn"
+    >
+      <div class="modal-inner">
+        <img id="modalImg" src="" alt="Ảnh lớn" />
+        <button id="closeModal" aria-label="Đóng modal">✕ Đóng (Esc)</button>
+      </div>
+    </div>
+
+    <hr style="margin: 32px 0" />
+
+    <!-- Command palette -->
+    <h2>⌨️ Command Palette (Ctrl+K để mở)</h2>
+    <p style="font-size: 14px; color: #666">
+      Gợi ý: mở palette rồi gõ "new", "save", "about"...
+    </p>
+
+    <div
+      id="cmdOverlay"
+      class="modal hidden"
+      role="dialog"
+      aria-label="Command palette"
+    >
+      <div class="cmd-box">
+        <input
+          type="text"
+          id="cmdInput"
+          placeholder="Tìm lệnh..."
+          aria-label="Nhập lệnh"
+        />
+        <ul id="cmdList" role="listbox"></ul>
+      </div>
+    </div>
+
+    <script src="keyboard_app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  background: #f5f5f5;
+}
+
+h2 {
+  margin-bottom: 16px;
+  color: #222;
+}
+
+/* Gallery */
+#gallery {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+}
+
+.thumb-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.thumb:focus {
+  outline: 3px solid #4a90e2;
+}
+
+.thumb.active {
+  border-color: #4a90e2;
+}
+
+#slideInfo {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-inner {
+  text-align: center;
+}
+
+.modal-inner img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-inner button {
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Command palette */
+.cmd-box {
+  background: white;
+  width: 480px;
+  max-width: 95vw;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+#cmdInput {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #eee;
+  outline: none;
+}
+
+#cmdList {
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#cmdList li {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cmdList li:hover,
+#cmdList li.focused {
+  background: #f0f5ff;
+}
+
+#cmdList li .icon {
+  margin-right: 8px;
+}
+
+/* Focus ring cho keyboard nav */
+:focus-visible {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
