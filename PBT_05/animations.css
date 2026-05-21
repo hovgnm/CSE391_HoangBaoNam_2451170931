@@ -1,0 +1,297 @@
+/* =============================================
+   animations.css — CSS Transitions & Animations
+   Bài B2: 5 hiệu ứng cơ bản
+   ============================================= */
+
+/* ===== RESET & CƠ BẢN ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #e53935;
+  margin-bottom: 8px;
+}
+
+.intro {
+  text-align: center;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+/* Mỗi khu vực demo */
+.demo-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #ddd;
+}
+
+.demo-section h2 {
+  color: #e53935;
+  margin-bottom: 6px;
+}
+
+.demo-section > p {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* =============================================
+   HIỆU ỨNG 1: Card hover
+   - transform: translateY(-8px) → nâng lên 8px
+   - box-shadow → bóng đổ to hơn
+   - transition → làm hiệu ứng mượt mà
+   ============================================= */
+.card-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; /* xuống hàng nếu hẹp */
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 240px;
+  padding-bottom: 16px;
+  text-align: center;
+
+  /* Bóng nhẹ ban đầu */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* transition: áp dụng cho TẤT CẢ thuộc tính thay đổi, trong 0.3 giây */
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  /* Di chuyển lên 8px */
+  transform: translateY(-8px);
+  /* Bóng to hơn khi hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.card p {
+  color: #e53935;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* =============================================
+   HIỆU ỨNG 2: Button hover
+   - background-color đổi màu mượt mà
+   - transform: scale(1.05) → phóng to nhẹ
+   ============================================= */
+.button-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Nút Mua ngay — đỏ */
+.btn-buy,
+.btn-primary {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.btn-buy:hover,
+.btn-primary:hover {
+  background-color: #b71c1c; /* đỏ đậm hơn */
+  transform: scale(1.05); /* to hơn 5% */
+}
+
+/* Nút Thêm vào giỏ — xanh lá */
+.btn-secondary {
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #2e7d32;
+  transform: scale(1.05);
+}
+
+/* Nút Xem chi tiết — viền, không nền */
+.btn-outline {
+  background-color: transparent;
+  color: #e53935;
+  border: 2px solid #e53935;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #e53935; /* lấp đầy nền */
+  color: white;
+  transform: scale(1.05);
+}
+
+/* =============================================
+   HIỆU ỨNG 3: Image zoom khi hover
+   - .img-wrapper có overflow: hidden → cắt ảnh
+   - img có transition → zoom mượt
+   ============================================= */
+.image-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Container giữ kích thước cố định */
+.img-wrapper {
+  width: 280px;
+  height: 200px;
+  overflow: hidden; /* phần ảnh tràn ra bị ẨN */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Ảnh bên trong */
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ảnh lấp đầy container */
+  display: block;
+
+  /* Hiệu ứng mượt khi zoom */
+  transition: transform 0.4s ease;
+}
+
+/* Khi hover vào WRAPPER → ảnh bên trong phóng to */
+.img-wrapper:hover img {
+  transform: scale(1.1); /* phóng to 110% */
+}
+
+/* =============================================
+   HIỆU ỨNG 4: Loading spinner
+   - @keyframes spin: xoay từ 0° → 360°
+   - animation: áp dụng keyframes vào phần tử
+   ============================================= */
+
+/* Định nghĩa animation xoay */
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* bắt đầu: không xoay */
+  }
+  to {
+    transform: rotate(360deg); /* kết thúc: xoay 1 vòng */
+  }
+}
+
+.spinner-demo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* hình tròn */
+
+  /* Viền: 3 phần xám nhạt, 1 phần đỏ (tạo cảm giác xoay) */
+  border: 5px solid #ddd;
+  border-top-color: #e53935; /* chỉ 1 cạnh có màu */
+
+  /* Áp dụng animation:
+     - spin: tên @keyframes
+     - 1s: thời gian 1 vòng
+     - linear: tốc độ đều (không ease)
+     - infinite: lặp mãi */
+  animation: spin 1s linear infinite;
+}
+
+/* =============================================
+   HIỆU ỨNG 5: Fade-in khi tải trang
+   - @keyframes fadeIn: từ ẩn → hiện
+   - animation-delay: mỗi item xuất hiện trễ hơn
+   ============================================= */
+
+/* Định nghĩa animation fade + trượt lên */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* ẩn hoàn toàn */
+    transform: translateY(20px); /* dịch xuống 20px */
+  }
+  to {
+    opacity: 1; /* hiện hoàn toàn */
+    transform: translateY(0); /* về vị trí gốc */
+  }
+}
+
+.fade-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.fade-item {
+  background-color: #e53935;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+
+  /* Áp dụng animation fadeIn:
+     - 0.5s: thời gian animation
+     - ease-out: bắt đầu nhanh, kết thúc chậm
+     - forwards: giữ trạng thái cuối (opacity: 1) */
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Các item xuất hiện trễ dần — tạo cảm giác "xổ ra" từng cái */
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}

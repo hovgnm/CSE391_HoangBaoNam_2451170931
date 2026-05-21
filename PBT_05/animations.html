@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations - Bài B2</title>
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+    <h1>CSS Transitions & Animations</h1>
+    <p class="intro">Hover vào các phần tử để xem hiệu ứng!</p>
+
+    <!-- ===== HIỆU ỨNG 1: Card hover (di chuyển lên + bóng đổ) ===== -->
+    <section class="demo-section">
+      <h2>1. Card hover — Di chuyển lên + bóng đổ</h2>
+      <p>Hover vào card → card nâng lên 8px và bóng đổ to hơn</p>
+
+      <div class="card-group">
+        <div class="card">
+          <img
+            src="https://placehold.co/240x160?text=San+Pham+A"
+            alt="Sản phẩm A"
+          />
+          <h3>Điện thoại A</h3>
+          <p>1.200.000 đ</p>
+          <button class="btn-buy">Mua ngay</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://placehold.co/240x160?text=San+Pham+B"
+            alt="Sản phẩm B"
+          />
+          <h3>Tai nghe B</h3>
+          <p>450.000 đ</p>
+          <button class="btn-buy">Mua ngay</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://placehold.co/240x160?text=San+Pham+C"
+            alt="Sản phẩm C"
+          />
+          <h3>Đồng hồ C</h3>
+          <p>890.000 đ</p>
+          <button class="btn-buy">Mua ngay</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HIỆU ỨNG 2: Button hover ===== -->
+    <section class="demo-section">
+      <h2>2. Button hover — Đổi màu + phóng to nhẹ</h2>
+      <p>Hover vào nút → màu đổi và nút to lên một chút</p>
+
+      <div class="button-group">
+        <button class="btn-primary">Mua ngay</button>
+        <button class="btn-secondary">Thêm vào giỏ</button>
+        <button class="btn-outline">Xem chi tiết</button>
+      </div>
+    </section>
+
+    <!-- ===== HIỆU ỨNG 3: Image zoom khi hover ===== -->
+    <section class="demo-section">
+      <h2>3. Image zoom — Ảnh phóng to khi hover</h2>
+      <p>Hover vào ảnh → ảnh to ra, nhưng container giữ nguyên kích thước</p>
+
+      <div class="image-group">
+        <!-- overflow: hidden trên .img-wrapper giữ ảnh không tràn ra ngoài -->
+        <div class="img-wrapper">
+          <img src="https://placehold.co/280x200?text=Anh+1" alt="Ảnh 1" />
+        </div>
+
+        <div class="img-wrapper">
+          <img src="https://placehold.co/280x200?text=Anh+2" alt="Ảnh 2" />
+        </div>
+
+        <div class="img-wrapper">
+          <img src="https://placehold.co/280x200?text=Anh+3" alt="Ảnh 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HIỆU ỨNG 4: Loading spinner ===== -->
+    <section class="demo-section">
+      <h2>4. Loading spinner — Vòng xoay tải trang</h2>
+      <p>Dùng @keyframes để tạo hiệu ứng xoay liên tục</p>
+
+      <div class="spinner-demo">
+        <div class="spinner"></div>
+        <p>Đang tải...</p>
+      </div>
+    </section>
+
+    <!-- ===== HIỆU ỨNG 5: Fade-in khi tải trang ===== -->
+    <section class="demo-section">
+      <h2>5. Fade-in — Xuất hiện dần khi tải trang</h2>
+      <p>Các item dưới đây xuất hiện dần (opacity 0 → 1) với delay khác nhau</p>
+
+      <div class="fade-group">
+        <div class="fade-item">🎁 Sản phẩm 1</div>
+        <div class="fade-item delay-1">🎁 Sản phẩm 2</div>
+        <div class="fade-item delay-2">🎁 Sản phẩm 3</div>
+        <div class="fade-item delay-3">🎁 Sản phẩm 4</div>
+      </div>
+    </section>
+  </body>
+</html>
