@@ -1,16 +1,8 @@
-# PHIẾU BÀI TẬP 09 — DOM MANIPULATION & EVENTS
-
-## File trả lời — Phần A và C
-
-> Tài liệu tham chiếu: `tuan_5_javascript_dom_async/19_dom_manipulation.md`
+# PHẦN A — KIỂM TRA ĐỌC HIỂU
 
 ---
 
-## PHẦN A — KIỂM TRA ĐỌC HIỂU
-
----
-
-### Câu A1 (5đ) — DOM Tree
+## Câu A1 (5đ) — DOM Tree
 
 **1. Sơ đồ DOM tree:**
 
@@ -62,7 +54,7 @@ document.querySelectorAll("nav a");
 
 ---
 
-### Câu A2 (5đ) — innerHTML vs textContent
+## Câu A2 (5đ) — innerHTML vs textContent
 
 **Sự khác nhau:**
 
@@ -103,7 +95,7 @@ document.querySelector("#result").textContent = userInput;
 
 ---
 
-### Câu A3 (5đ) — Event Bubbling
+## Câu A3 (5đ) — Event Bubbling
 
 **Khi click vào button (không có stopPropagation):**
 
@@ -127,11 +119,11 @@ BUTTON
 
 ---
 
-## PHẦN C — DEBUG & PHÂN TÍCH
+# PHẦN C — DEBUG & PHÂN TÍCH
 
 ---
 
-### Câu C1 (8đ) — Debug DOM Code
+## Câu C1 (8đ) — Debug DOM Code
 
 Tìm được **8 lỗi** trong code, liệt kê và sửa từng cái:
 
@@ -276,7 +268,7 @@ window.addEventListener("load", () => {
 
 ---
 
-### Câu C2 (7đ) — Performance
+## Câu C2 (7đ) — Performance
 
 **1. Tại sao bind event lên 1000 elements riêng lẻ là bad practice?**
 

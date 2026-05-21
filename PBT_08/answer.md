@@ -1,18 +1,8 @@
-# PHIẾU BÀI TẬP 08 — ANSWERS.MD
-
-## JavaScript Functions, Arrays & Objects
-
-> **Họ tên:** [Nguyễn Văn A]
-> **MSSV:** [xxxxxxxx]
-> **Lớp:** [xxx]
+# PHẦN A — KIỂM TRA ĐỌC HIỂU
 
 ---
 
-## PHẦN A — KIỂM TRA ĐỌC HIỂU (20 điểm)
-
----
-
-### Câu A1 (5đ) — Function Declaration vs Expression vs Arrow
+## Câu A1 (5đ) — Function Declaration vs Expression vs Arrow
 
 **3 cách viết hàm `tinhThueBaoHiem(luong)`:**
 
@@ -65,7 +55,7 @@ const tinhThueBaoHiem2 = function (luong) {
 
 ---
 
-### Câu A2 (5đ) — Scope & Closure
+## Câu A2 (5đ) — Scope & Closure
 
 **Đoạn 1 — Dự đoán output:**
 
@@ -98,7 +88,7 @@ Với `let`: biến `j` có block scope — mỗi vòng lặp tạo ra một `j`
 
 ---
 
-### Câu A3 (5đ) — Array Methods
+## Câu A3 (5đ) — Array Methods
 
 ```javascript
 const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -130,7 +120,7 @@ nums.map((n) => `Số ${n} là ${n % 2 === 0 ? "chẵn" : "lẻ"}`);
 
 ---
 
-### Câu A4 (5đ) — Object Destructuring & Spread
+## Câu A4 (5đ) — Object Destructuring & Spread
 
 **Dự đoán output:**
 
@@ -162,11 +152,11 @@ console.log(product.specs.ram); // → 16
 
 ---
 
-## PHẦN C — SUY LUẬN (20 điểm)
+# PHẦN C — SUY LUẬN (20 điểm)
 
 ---
 
-### Câu C1 (10đ) — Refactor Code
+## Câu C1 (10đ) — Refactor Code
 
 **Code sau khi refactor (≤ 10 dòng):**
 
@@ -189,7 +179,7 @@ Code gốc dùng 2 vòng `for` lồng nhau để sort (O(n²)) rất chậm và 
 
 ---
 
-### Câu C2 (10đ) — Thiết kế API
+## Câu C2 (10đ) — Thiết kế API
 
 **Implement `miniArray`:**
 

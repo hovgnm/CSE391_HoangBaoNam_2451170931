@@ -1,8 +1,6 @@
-# PHIẾU TRẢ LỜI — PBT05
+# PHẦN A — KIỂM TRA ĐỌC HIỂU
 
-## PHẦN A — KIỂM TRA ĐỌC HIỂU
-
-### Câu A1 — Viewport & Mobile-First
+## Câu A1 — Viewport & Mobile-First
 
 _(Tham chiếu: `13_creating_responsive_layouts.md` — mục 3 "Bước 0: Viewport Meta Tag" và "Mobile-First vs Desktop-First")_
 
@@ -60,7 +58,7 @@ _Desktop-First (cách cũ):_
 
 ---
 
-### Câu A2 — Breakpoints Chuẩn
+## Câu A2 — Breakpoints Chuẩn
 
 _(Tham chiếu: `13_creating_responsive_layouts.md` — mục 3 "Breakpoints chuẩn")_
 
@@ -75,7 +73,7 @@ _(Tham chiếu: `13_creating_responsive_layouts.md` — mục 3 "Breakpoints chu
 
 ---
 
-### Câu A3 — Đọc Media Queries
+## Câu A3 — Đọc Media Queries
 
 _(Tham chiếu: `13_creating_responsive_layouts.md` — mục 3 "Media Queries" và "Breakpoints chuẩn")_
 
@@ -91,7 +89,7 @@ Quy tắc áp dụng: CSS đọc từ trên xuống, `@media (min-width: X)` ch�
 
 ---
 
-### Câu A4 — SCSS Basics
+## Câu A4 — SCSS Basics
 
 _(Tham chiếu: `16_sass_scss.md` — mục 3 "Core Technical Truth")_
 
@@ -212,9 +210,9 @@ Browser chỉ hiểu CSS thuần. SCSS là ngôn ngữ mở rộng cần đượ
 
 ---
 
-## PHẦN C — PHÂN TÍCH
+# PHẦN C — PHÂN TÍCH
 
-### Câu C1 — Phân tích trang Shopee
+## Câu C1 — Phân tích trang Shopee
 
 _(Tham chiếu: `13_creating_responsive_layouts.md` — mục 5 "Real-world Layer: Tại sao Shopee load nhanh trên mobile?" và mục 6 "Test responsive NHANH")_
 
@@ -271,7 +269,7 @@ Có — tiêu đề sản phẩm nhỏ hơn trên mobile (khoảng 12–13px so 
 
 ---
 
-### Câu C2 — Thiết kế Responsive Strategy: Trang Đặt Bàn Nhà Hàng
+## Câu C2 — Thiết kế Responsive Strategy: Trang Đặt Bàn Nhà Hàng
 
 _(Tham chiếu: `13_creating_responsive_layouts.md` — mục 3 "Mobile-First" và mục 6 "Bài tập: Todo App → Responsive")_
 

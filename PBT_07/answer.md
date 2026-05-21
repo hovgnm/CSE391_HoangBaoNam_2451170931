@@ -1,4 +1,4 @@
-# Answers - Phần A và C1
+# PHẦN A — KIỂM TRA ĐỌC HIỂU
 
 ## Câu A1 — var / let / const
 
@@ -110,6 +110,8 @@ let html = `<div class="card">
 Template literal tiện hơn nhiều, không cần dùng dấu `+` liên tục và không cần escape dấu `"` bên trong nữa.
 
 ---
+
+# PHẦN C — SUY LUẬN
 
 ## Câu C1 — Debug JavaScript
 
