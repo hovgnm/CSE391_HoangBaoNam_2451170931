@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-white">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+
+      <a href="#" class="text-xl font-bold text-blue-600 dark:text-blue-400">🛍️ ShopOnline</a>
+
+      <!-- menu desktop -->
+      <ul class="hidden md:flex gap-6 text-sm font-medium dark:text-gray-200">
+        <li><a href="#" class="hover:text-blue-500">Trang chủ</a></li>
+        <li><a href="#products" class="hover:text-blue-500">Sản phẩm</a></li>
+        <li><a href="#footer" class="hover:text-blue-500">Liên hệ</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- dark mode toggle -->
+        <button onclick="document.documentElement.classList.toggle('dark')"
+          class="text-xs bg-gray-200 dark:bg-gray-600 dark:text-white px-3 py-1 rounded-full hover:bg-gray-300 dark:hover:bg-gray-500">
+          🌙 Dark
+        </button>
+
+        <!-- search -->
+        <input type="text" placeholder="Tìm kiếm..."
+          class="hidden md:block border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+
+        <!-- cart -->
+        <button class="relative text-xl">
+          🛒
+          <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">3</span>
+        </button>
+
+        <!-- mobile menu button -->
+        <button class="md:hidden text-gray-600 dark:text-gray-300 text-xl">☰</button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="bg-blue-600 dark:bg-blue-900 text-white text-center py-24 px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Mua sắm dễ dàng hơn</h1>
+    <p class="text-lg text-blue-100 mb-8 max-w-xl mx-auto">
+      Hàng nghìn sản phẩm với giá tốt nhất, giao hàng nhanh toàn quốc.
+    </p>
+    <a href="#products"
+      class="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors duration-200">
+      Xem sản phẩm ngay
+    </a>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section id="products" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-6 dark:text-white">Sản phẩm nổi bật</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative">
+        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">Sale</span>
+        <img src="https://picsum.photos/seed/p1/300/200" alt="Áo thun nam" class="w-full h-44 object-cover"/>
+        <div class="p-4">
+          <h3 class="font-semibold text-gray-800 dark:text-white mb-1">Áo thun nam</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Chất liệu cotton, thoáng mát.</p>
+          <p class="text-red-500 font-bold mb-3">150.000đ <span class="line-through text-gray-400 text-sm font-normal">200.000đ</span></p>
+          <div class="flex gap-2">
+            <button class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 rounded-md transition-colors">
+              Thêm vào giỏ
+            </button>
+            <button class="border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 text-sm px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              👁
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+        <img src="https://picsum.photos/seed/p2/300/200" alt="Quần jean nữ" class="w-full h-44 object-cover"/>
+        <div class="p-4">
+          <h3 class="font-semibold text-gray-800 dark:text-white mb-1">Quần jean nữ</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Form dáng đẹp, bền màu.</p>
+          <p class="text-red-500 font-bold mb-3">250.000đ</p>
+          <div class="flex gap-2">
+            <button class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 rounded-md transition-colors">
+              Thêm vào giỏ
+            </button>
+            <button class="border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 text-sm px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              👁
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative">
+        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">Sale</span>
+        <img src="https://picsum.photos/seed/p3/300/200" alt="Giày sneaker" class="w-full h-44 object-cover"/>
+        <div class="p-4">
+          <h3 class="font-semibold text-gray-800 dark:text-white mb-1">Giày sneaker</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Đế êm, chống trượt tốt.</p>
+          <p class="text-red-500 font-bold mb-3">450.000đ <span class="line-through text-gray-400 text-sm font-normal">600.000đ</span></p>
+          <div class="flex gap-2">
+            <button class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 rounded-md transition-colors">
+              Thêm vào giỏ
+            </button>
+            <button class="border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 text-sm px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              👁
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+        <img src="https://picsum.photos/seed/p4/300/200" alt="Túi xách nữ" class="w-full h-44 object-cover"/>
+        <div class="p-4">
+          <h3 class="font-semibold text-gray-800 dark:text-white mb-1">Túi xách nữ</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Da PU cao cấp, nhiều màu.</p>
+          <p class="text-red-500 font-bold mb-3">320.000đ</p>
+          <div class="flex gap-2">
+            <button class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 rounded-md transition-colors">
+              Thêm vào giỏ
+            </button>
+            <button class="border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 text-sm px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              👁
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-gray-800 dark:bg-gray-950 text-gray-300 py-10 mt-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h6 class="font-bold text-white mb-3">🛍️ ShopOnline</h6>
+          <p class="text-sm text-gray-400">Mua sắm dễ dàng, giao hàng nhanh toàn quốc.</p>
+        </div>
+        <div>
+          <h6 class="font-bold text-white mb-3">Danh mục</h6>
+          <ul class="text-sm space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors">Thời trang nam</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Thời trang nữ</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Giày dép</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Phụ kiện</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-bold text-white mb-3">Hỗ trợ</h6>
+          <ul class="text-sm space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors">Chính sách đổi trả</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Hướng dẫn mua hàng</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-bold text-white mb-3">Liên hệ</h6>
+          <p class="text-sm text-gray-400 mb-1">📧 support@shoponline.vn</p>
+          <p class="text-sm text-gray-400 mb-1">📞 0123 456 789</p>
+          <p class="text-sm text-gray-400">📍 Hà Nội, Việt Nam</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
+        © 2025 ShopOnline. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
