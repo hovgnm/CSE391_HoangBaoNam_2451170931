@@ -24,21 +24,41 @@
   - [x] **Phần B: THỰC HÀNH CODE**
   - [x] **Phần C: SUY LUẬN**
   - [ ] **Phần D: VIDEO THỰC HÀNH OBS**
-- **PBT_03:** (Đang cập nhật...)
+- **PBT_03: CSS CORE**
   - [x] **Phần A: KIỂM TRA ĐỌC HIỂU**
   - [x] **Phần B: THỰC HÀNH CODE**
   - [x] **Phần C: SUY LUẬN**
   - [ ] **Phần D:VIDEO THỰC HÀNH OBS**
-- **PBT_04:** (Đang cập nhật...)
-  - [ ] **Phần A: KIỂM TRA ĐỌC HIỂU**
-  - [ ] **Phần B: THỰC HÀNH CODE**
-  - [ ] **Phần C: SUY LUẬN**
+- **PBT_04: CSS LAYOUT**
+  - [x] **Phần A: KIỂM TRA ĐỌC HIỂU**
+  - [x] **Phần B: THỰC HÀNH CODE**
+  - [x] **Phần C: SUY LUẬN**
   - [ ] **Phần D:VIDEO THỰC HÀNH OBS**
-- **PBT_05:** (Đang cập nhật...)
-- **PBT_06:** (Đang cập nhật...)
-- **PBT_07:** (Đang cập nhật...)
-- **PBT_08:** (Đang cập nhật...)
-- **PBT_09:** (Đang cập nhật...)
+- **PBT_05: CSS RESPONSIVE & SCSS**
+  - [x] **Phần A: KIỂM TRA ĐỌC HIỂU**
+  - [x] **Phần B: THỰC HÀNH CODE**
+  - [x] **Phần C: SUY LUẬN**
+  - [ ] **Phần D:VIDEO THỰC HÀNH OBS**
+- **PBT_06: CSS FRAMEWORKS**
+  - [x] **Phần A: KIỂM TRA ĐỌC HIỂU**
+  - [x] **Phần B: THỰC HÀNH CODE**
+  - [x] **Phần C: SUY LUẬN**
+  - [ ] **Phần D:VIDEO THỰC HÀNH OBS**
+- **PBT_07: JAVASCRIPT BASICS**
+  - [x] **Phần A: KIỂM TRA ĐỌC HIỂU**
+  - [x] **Phần B: THỰC HÀNH CODE**
+  - [x] **Phần C: SUY LUẬN**
+  - [ ] **Phần D:VIDEO THỰC HÀNH OBS**
+- **PBT_08: JAVASCRIPT FUNCTIONS, ARRAYS & OBJECTS**
+  - [x] **Phần A: KIỂM TRA ĐỌC HIỂU**
+  - [x] **Phần B: THỰC HÀNH CODE**
+  - [x] **Phần C: SUY LUẬN**
+  - [ ] **Phần D:VIDEO THỰC HÀNH OBS**
+- **PBT_09: DOM MANIPULATION & EVENTS**
+  - [x] **Phần A: KIỂM TRA ĐỌC HIỂU**
+  - [x] **Phần B: THỰC HÀNH CODE**
+  - [x] **Phần C: SUY LUẬN**
+  - [ ] **Phần D:VIDEO THỰC HÀNH OBS**
 - **PBT_10:** (Đang cập nhật...)
 
 ### Bài tập lớn (BTL)
