@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* ===== 1. FIXED HEADER ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #1e293b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.nav a:hover {
+    color: #f0abfc;
+}
+
+/* ===== LAYOUT CHÍNH ===== */
+.main-layout {
+    display: flex;
+    margin-top: 60px; /* đẩy xuống dưới header fixed */
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ===== 2. STICKY SIDEBAR ===== */
+.sidebar {
+    position: sticky;
+    top: 80px; /* cách header 20px */
+    width: 200px;
+    height: fit-content;
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.sidebar h3 {
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    color: #2563eb;
+}
+
+/* ===== NỘI DUNG ===== */
+.content {
+    flex: 1;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+/* ===== PRODUCT LIST ===== */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* ===== 3. CARD + BADGE ===== */
+.card {
+    position: relative; /* để badge tính tọa độ từ đây */
+    width: 200px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding-bottom: 12px;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card h4 {
+    padding: 8px 12px 4px;
+    font-size: 14px;
+}
+
+.card p {
+    padding: 0 12px;
+    color: #e11d48;
+    font-weight: bold;
+}
+
+/* Badge HOT - dùng absolute */
+.badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== 4. SCROLL TO TOP BUTTON ===== */
+.scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.scroll-top:hover {
+    background: #1d4ed8;
+}

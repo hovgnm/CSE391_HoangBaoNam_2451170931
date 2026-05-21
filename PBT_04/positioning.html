@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài B1 - Positioning</title>
+    <link rel="stylesheet" href="positioning.css" />
+  </head>
+  <body>
+    <!-- 1. Fixed header -->
+    <header class="header">
+      <div class="logo">🛍️ MyShop</div>
+      <nav class="nav">
+        <a href="#">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Liên hệ</a>
+      </nav>
+    </header>
+
+    <!-- Layout chính -->
+    <div class="main-layout">
+      <!-- 2. Sticky sidebar -->
+      <aside class="sidebar">
+        <h3>Danh mục</h3>
+        <ul>
+          <li>Áo</li>
+          <li>Quần</li>
+          <li>Giày</li>
+          <li>Túi xách</li>
+          <li>Phụ kiện</li>
+        </ul>
+      </aside>
+
+      <!-- Nội dung chính -->
+      <main class="content">
+        <h2>Sản phẩm nổi bật</h2>
+
+        <div class="product-list">
+          <!-- 3. Card có badge HOT -->
+          <div class="card">
+            <span class="badge">HOT</span>
+            <img src="https://via.placeholder.com/200x150" alt="sản phẩm" />
+            <h4>Áo thun nam</h4>
+            <p>150.000đ</p>
+          </div>
+
+          <div class="card">
+            <span class="badge">HOT</span>
+            <img src="https://via.placeholder.com/200x150" alt="sản phẩm" />
+            <h4>Quần jean</h4>
+            <p>350.000đ</p>
+          </div>
+
+          <div class="card">
+            <img src="https://via.placeholder.com/200x150" alt="sản phẩm" />
+            <h4>Giày sneaker</h4>
+            <p>500.000đ</p>
+          </div>
+
+          <div class="card">
+            <img src="https://via.placeholder.com/200x150" alt="sản phẩm" />
+            <h4>Túi đeo vai</h4>
+            <p>250.000đ</p>
+          </div>
+        </div>
+
+        <!-- thêm nội dung để test scroll -->
+        <p style="margin-top: 30px">Cuộn xuống</p>
+        <p style="margin-top: 600px">
+          Cuộn xuống tới đây để test sticky sidebar
+        </p>
+        <p style="margin-top: 400px">Cuối trang</p>
+      </main>
+    </div>
+
+    <!-- 4. Scroll to top button -->
+    <button class="scroll-top">↑</button>
+  </body>
+</html>
