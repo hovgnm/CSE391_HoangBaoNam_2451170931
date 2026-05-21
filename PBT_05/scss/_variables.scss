@@ -1,0 +1,26 @@
+// _variables.scss
+// Chứa tất cả các biến dùng chung trong toàn bộ dự án
+// Tên biến SCSS bắt đầu bằng dấu $
+
+// --- Màu sắc ---
+$primary-color: #e53935; // đỏ chính
+$secondary-color: #43a047; // xanh lá phụ
+$dark-color: #333333; // màu chữ tối
+$light-color: #f5f5f5; // nền sáng
+$white: #ffffff;
+$border-color: #dddddd;
+
+// --- Font chữ ---
+$font-primary: Arial, sans-serif;
+
+// --- Breakpoints (điểm ngắt) ---
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// --- Khoảng cách ---
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// --- Bo góc ---
+$border-radius: 8px;

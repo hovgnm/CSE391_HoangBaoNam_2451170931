@@ -1,0 +1,31 @@
+// _mixins.scss
+// Chứa các mixin tái sử dụng
+// Mixin giống như "hàm" trong CSS — gọi một lần, áp dụng nhiều nơi
+
+// --- Mixin 1: Responsive (media query) ---
+// Cách dùng: @include respond-to(tablet) { ... }
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: $breakpoint-tablet) {
+      @content; // nội dung bên trong @include sẽ vào đây
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+}
+
+// --- Mixin 2: Căn giữa bằng Flexbox ---
+// Cách dùng: @include flex-center;
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// --- Mixin 3: Bóng đổ card ---
+// Cách dùng: @include card-shadow;
+@mixin card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

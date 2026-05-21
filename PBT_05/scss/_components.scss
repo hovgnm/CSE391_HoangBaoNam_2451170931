@@ -1,0 +1,105 @@
+// _components.scss
+// CSS cho các thành phần (component): card, button, header...
+// Dùng Nesting (lồng nhau) và biến từ _variables.scss
+
+// ===== CARD =====
+.card {
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  // Gọi mixin bóng đổ
+  @include card-shadow;
+
+  // transition để hover mượt
+  transition: all 0.3s ease;
+
+  // Phần tử con .card-image (Nesting)
+  .card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  // Phần tử con .card-title (Nesting)
+  .card-title {
+    font-size: 14px;
+    color: $dark-color;
+    padding: $spacing-sm $spacing-md;
+    margin-bottom: $spacing-sm;
+  }
+
+  // Phần tử con .card-price (Nesting)
+  .card-price {
+    color: $primary-color;
+    font-weight: bold;
+    padding: 0 $spacing-md $spacing-sm;
+  }
+
+  // & đại diện cho .card — tức là .card:hover
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  // .card.featured — card nổi bật
+  &.featured {
+    border: 2px solid $primary-color;
+
+    .card-title {
+      color: $primary-color;
+    }
+  }
+}
+
+// ===== BUTTON =====
+.btn-buy {
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%); // tối hơn 10%
+    transform: scale(1.05);
+  }
+}
+
+// ===== HEADER =====
+.header {
+  background-color: $primary-color;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+// ===== FOOTER =====
+.footer {
+  background-color: $dark-color;
+  color: $white;
+  text-align: center;
+  padding: $spacing-md;
+  margin-top: $spacing-sm;
+  font-size: 13px;
+}

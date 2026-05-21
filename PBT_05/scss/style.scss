@@ -1,0 +1,87 @@
+// style.scss — File SCSS chính
+// Import tất cả các partial (file con) vào đây
+// Thứ tự quan trọng: variables và mixins phải trước để file sau dùng được
+
+@import "variables"; // import _variables.scss
+@import "mixins"; // import _mixins.scss
+@import "components"; // import _components.scss
+
+// ===== RESET CƠ BẢN =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary; // dùng biến $font-primary
+  font-size: 14px;
+  color: $dark-color; // dùng biến $dark-color
+  background-color: $light-color; // dùng biến $light-color
+}
+
+// ===== BỐ CỤC CHÍNH =====
+// Mobile mặc định: 1 cột dọc
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-sm; // dùng biến spacing
+  gap: $spacing-sm;
+}
+
+// Sidebar ẩn trên mobile
+.sidebar {
+  display: none;
+  background-color: $white;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+}
+
+// ===== LƯỚI SẢN PHẨM (Mobile-First) =====
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr; // 1 cột mobile
+  gap: $spacing-sm;
+}
+
+// ===== TABLET =====
+// Dùng mixin respond-to thay vì viết @media dài
+@include respond-to(tablet) {
+  body {
+    font-size: 15px;
+  }
+
+  .main-content {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: $spacing-md;
+  }
+
+  .sidebar {
+    display: block;
+    width: 200px;
+    flex-shrink: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); // 2 cột tablet
+  }
+}
+
+// ===== DESKTOP =====
+@include respond-to(desktop) {
+  body {
+    font-size: 16px;
+  }
+
+  .main-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: $spacing-lg;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); // 4 cột desktop
+  }
+}
