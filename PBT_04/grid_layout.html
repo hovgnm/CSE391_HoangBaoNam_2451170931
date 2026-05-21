@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài B3 - Grid Layout</title>
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+  <body>
+    <div class="page-grid">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="logo">🛍️ E-Shop</div>
+        <nav>
+          <a href="#">Trang chủ</a>
+          <a href="#">Danh mục</a>
+          <a href="#">Khuyến mãi</a>
+          <a href="#">Liên hệ</a>
+        </nav>
+      </header>
+
+      <!-- HERO BANNER -->
+      <div class="hero">
+        <h1>🔥 Siêu Sale Hè 2025</h1>
+        <p>Giảm đến 50% toàn bộ sản phẩm</p>
+        <button>Mua ngay</button>
+      </div>
+
+      <!-- SIDEBAR - BỘ LỌC -->
+      <aside class="sidebar">
+        <h3>Bộ lọc</h3>
+
+        <div class="filter-group">
+          <h4>Danh mục</h4>
+          <label><input type="checkbox" /> Áo</label>
+          <label><input type="checkbox" /> Quần</label>
+          <label><input type="checkbox" /> Giày</label>
+          <label><input type="checkbox" /> Túi xách</label>
+          <label><input type="checkbox" /> Phụ kiện</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Giá</h4>
+          <label><input type="checkbox" /> Dưới 200k</label>
+          <label><input type="checkbox" /> 200k - 500k</label>
+          <label><input type="checkbox" /> Trên 500k</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Thương hiệu</h4>
+          <label><input type="checkbox" /> Nike</label>
+          <label><input type="checkbox" /> Adidas</label>
+          <label><input type="checkbox" /> Local Brand</label>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT - LƯỚI SẢN PHẨM -->
+      <main class="main-content">
+        <h2>Tất cả sản phẩm</h2>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x140" alt="sp" />
+            <div class="info">
+              <h4>Áo thun basic</h4>
+              <p class="price">120.000đ</p>
+              <button>Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x140" alt="sp" />
+            <div class="info">
+              <h4>Quần jean slim</h4>
+              <p class="price">350.000đ</p>
+              <button>Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x140" alt="sp" />
+            <div class="info">
+              <h4>Giày thể thao</h4>
+              <p class="price">480.000đ</p>
+              <button>Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x140" alt="sp" />
+            <div class="info">
+              <h4>Túi đeo chéo</h4>
+              <p class="price">200.000đ</p>
+              <button>Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x140" alt="sp" />
+            <div class="info">
+              <h4>Mũ lưỡi trai</h4>
+              <p class="price">90.000đ</p>
+              <button>Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x140" alt="sp" />
+            <div class="info">
+              <h4>Áo khoác bomber</h4>
+              <p class="price">420.000đ</p>
+              <button>Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ADS -->
+      <aside class="ads">
+        <div class="ads-banner">
+          <img src="https://via.placeholder.com/160x200" alt="quảng cáo" />
+          <p>Quảng cáo</p>
+        </div>
+        <div class="ads-banner" style="margin-top: 16px">
+          <img src="https://via.placeholder.com/160x120" alt="quảng cáo" />
+          <p>Flash Sale</p>
+        </div>
+      </aside>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p>© 2025 E-Shop — Tất cả quyền được bảo lưu</p>
+      </footer>
+    </div>
+  </body>
+</html>
