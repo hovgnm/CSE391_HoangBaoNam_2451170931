@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>📊 Dashboard Tổng Hợp</h1>
+      <div class="header-right">
+        <span id="load-time"></span>
+        <button id="btn-refresh" onclick="loadDashboard()">
+          🔄 Refresh All
+        </button>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- Widget 1: Thời tiết Hà Nội -->
+      <div class="widget" id="widget-weather">
+        <div class="widget-header">
+          <h2>🌤️ Thời Tiết Hà Nội</h2>
+          <span class="widget-status loading" id="status-weather"
+            >⏳ Đang tải</span
+          >
+        </div>
+        <div id="content-weather">
+          <div class="skeleton" style="height: 40px; width: 100px"></div>
+          <div class="skeleton" style="height: 14px; margin-top: 10px"></div>
+          <div class="skeleton" style="height: 14px"></div>
+          <div class="skeleton" style="height: 14px"></div>
+        </div>
+      </div>
+
+      <!-- Widget 2: Random Users -->
+      <div class="widget" id="widget-users">
+        <div class="widget-header">
+          <h2>👥 Người Dùng Ngẫu Nhiên</h2>
+          <span class="widget-status loading" id="status-users"
+            >⏳ Đang tải</span
+          >
+        </div>
+        <div id="content-users">
+          <div class="skeleton" style="height: 40px"></div>
+          <div class="skeleton" style="height: 40px"></div>
+          <div class="skeleton" style="height: 40px"></div>
+        </div>
+      </div>
+
+      <!-- Widget 3: Thông tin Việt Nam -->
+      <div class="widget" id="widget-country">
+        <div class="widget-header">
+          <h2>🇻🇳 Thông Tin Quốc Gia</h2>
+          <span class="widget-status loading" id="status-country"
+            >⏳ Đang tải</span
+          >
+        </div>
+        <div id="content-country">
+          <div class="skeleton" style="height: 50px"></div>
+          <div class="skeleton" style="height: 14px; margin-top: 10px"></div>
+          <div class="skeleton" style="height: 14px"></div>
+          <div class="skeleton" style="height: 14px"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
