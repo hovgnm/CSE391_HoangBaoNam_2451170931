@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thời Tiết</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>🌤️ Xem Thời Tiết</h1>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Nhập tên thành phố..."
+        value="Hanoi"
+      />
+      <button onclick="searchWeather()">Tìm</button>
+    </div>
+
+    <!-- Loading state -->
+    <div id="loading">
+      <div class="spinner"></div>
+      <p>Đang tải...</p>
+    </div>
+
+    <!-- Error state -->
+    <div id="error-box">
+      <p id="error-msg">❌ Có lỗi xảy ra!</p>
+    </div>
+
+    <!-- Success state -->
+    <div id="weather-card">
+      <div class="city-name" id="card-city"></div>
+      <div class="weather-icon" id="card-icon"></div>
+      <div class="temp" id="card-temp"></div>
+      <div class="detail-row">
+        <span>Cảm giác như</span>
+        <span id="card-feels"></span>
+      </div>
+      <div class="detail-row">
+        <span>Tốc độ gió</span>
+        <span id="card-wind"></span>
+      </div>
+      <div class="detail-row">
+        <span>Thời tiết</span>
+        <span id="card-desc"></span>
+      </div>
+    </div>
+
+    <!-- Lịch sử tìm kiếm -->
+    <div id="history-box">
+      <h3>🕐 Lịch sử tìm kiếm:</h3>
+      <div id="history-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
