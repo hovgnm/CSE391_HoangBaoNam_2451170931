@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a2e;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #e0e0e0;
+}
+
+/* Grid ảnh - responsive */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  #gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  #gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card ảnh */
+.photo-card {
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #2a2a4a;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.photo-card img.loaded {
+  opacity: 1;
+}
+
+.photo-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Placeholder khi ảnh chưa load */
+.photo-placeholder {
+  position: absolute;
+  inset: 0;
+  background: #2a2a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 30px;
+}
+
+/* Loading thêm ảnh */
+#load-trigger {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  font-size: 15px;
+}
+
+#load-trigger .dots {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#lightbox.open {
+  display: flex;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+#lightbox p {
+  color: #ccc;
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+#lightbox-close:hover {
+  color: #e74c3c;
+}
+
+#end-message {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+  display: none;
+}

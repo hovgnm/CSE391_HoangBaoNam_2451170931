@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thư Viện Ảnh</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>🖼️ Thư Viện Ảnh</h1>
+
+    <div id="gallery"></div>
+
+    <!-- Trigger để detect infinite scroll -->
+    <div id="load-trigger">
+      <span class="dots">⏳</span> Đang tải thêm ảnh...
+    </div>
+
+    <div id="end-message">— Đã tải hết ảnh —</div>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+      <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+      <img id="lightbox-img" src="" alt="" />
+      <p id="lightbox-title"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
