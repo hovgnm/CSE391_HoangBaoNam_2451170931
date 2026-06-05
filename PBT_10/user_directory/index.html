@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Người Dùng</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <h1>👥 Quản Lý Người Dùng</h1>
+
+    <div id="toast"></div>
+
+    <div class="toolbar">
+        <input type="text" id="search-input" placeholder="🔍 Tìm theo tên hoặc email..." oninput="filterUsers()" />
+        <button onclick="openAddForm()">+ Thêm user</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="user-tbody">
+            <!-- Skeleton rows -->
+            <tr><td colspan="5"><div class="skeleton"></div></td></tr>
+            <tr><td colspan="5"><div class="skeleton"></div></td></tr>
+            <tr><td colspan="5"><div class="skeleton"></div></td></tr>
+        </tbody>
+    </table>
+
+    <!-- Modal form -->
+    <div id="modal-overlay">
+        <div class="modal">
+            <h2 id="modal-title">Thêm User</h2>
+            <input type="hidden" id="form-id" />
+
+            <div class="form-group">
+                <label>Tên</label>
+                <input type="text" id="form-name" placeholder="Nhập tên..." />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="form-email" placeholder="Nhập email..." />
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="text" id="form-phone" placeholder="Nhập SĐT..." />
+            </div>
+
+            <div class="modal-buttons">
+                <button class="btn-save" onclick="saveUser()">💾 Lưu</button>
+                <button class="btn-cancel" onclick="closeModal()">✖ Huỷ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
