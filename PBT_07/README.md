@@ -21,5 +21,5 @@
   - [x] File `fizzbuzz.js` — Bài B4
   - [x] File `restaurant_bill.js` — Câu C2
   - [x] Folder `screenshots/` — kết quả chạy console
-  - [ ] 🎬 **Video OBS** — `videos/PBT07_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
+  - [x] 🎬 **Video OBS** — `videos/PBT07_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
   - [x] Ít nhất **4 commits**

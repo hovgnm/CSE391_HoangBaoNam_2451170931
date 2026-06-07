@@ -19,6 +19,6 @@
   - [x] File `media.html` — Bài B2
   - [x] File `checkout.html` — Bài B3
   - [x] Folder `screenshots/` — chụp validation results
-  - [ ] 🎬 **Video OBS** — `videos/PBT02_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
+  - [x] 🎬 **Video OBS** — `videos/PBT02_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
   - [x] Ít nhất **3 commits**
-  - [ ] Validate tất cả file qua [validator.w3.org](https://validator.w3.org/)
+  - [x] Validate tất cả file qua [validator.w3.org](https://validator.w3.org/)

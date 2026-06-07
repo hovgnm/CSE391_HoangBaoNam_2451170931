@@ -17,5 +17,5 @@
   - [x] File `tailwind_landing.html` — Bài B1
   - [x] File `tailwind_components.html` — Bài B2
   - [x] Folder `screenshots/` — responsive ở 3 breakpoints + dark mode
-  - [ ] 🎬 **Video OBS** — `videos/PBT06_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
+  - [x] 🎬 **Video OBS** — `videos/PBT06_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
   - [x] Ít nhất **3 commits**

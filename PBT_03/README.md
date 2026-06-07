@@ -20,5 +20,5 @@
   - [x] File `specificity.html` + `specificity.css` — Bài B3
   - [x] File `debug_layout.html` + `debug_layout.css` — Câu C1
   - [x] Folder `screenshots/` — DevTools box model diagrams
-  - [ ] 🎬 **Video OBS** — `videos/PBT03_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
+  - [x] 🎬 **Video OBS** — `videos/PBT03_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
   - [x] Ít nhất **4 commits**

@@ -19,6 +19,6 @@
   - [x] File `products.html` — Bài B2
   - [x] File `debug.html` — Bài B3 (bản đã sửa)
   - [x] Folder `screenshots/` — Bài B4
-  - [ ] 🎬 **Video OBS** — `videos/PBT01_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
+  - [x] 🎬 **Video OBS** — `videos/PBT01_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
   - [x] Ít nhất **3 commits** có message rõ ràng
-  - [ ] Validate HTML qua [validator.w3.org](https://validator.w3.org/) — chụp screenshot kết quả
+  - [x] Validate HTML qua [validator.w3.org](https://validator.w3.org/) — chụp screenshot kết quả

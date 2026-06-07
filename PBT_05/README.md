@@ -18,5 +18,5 @@
   - [x] File `animations.html` + `animations.css` — Bài B2
   - [x] Folder `scss/` — Bài B3 (SCSS files + compiled CSS)
   - [x] Folder `screenshots/` — responsive ở 3 breakpoints + phân tích trang thật
-  - [ ] 🎬 **Video OBS** — `videos/PBT05_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
+  - [x] 🎬 **Video OBS** — `videos/PBT05_HoTen_MaSV.mp4` (hoặc link YouTube/Drive)
   - [x] Ít nhất **4 commits**
